@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/main"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@android:color/holo_green_light">
 
@@ -45,6 +46,7 @@
         />
 
     <View
+        android:id="@+id/vSpace"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginRight="16dp"
@@ -57,6 +59,124 @@
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         />
+
+    <Button
+        android:id="@+id/btnOne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Botón"
+        app:layout_constraintStart_toStartOf="@id/vSpace"
+        app:layout_constraintEnd_toEndOf="@id/vSpace"
+        app:layout_constraintTop_toBottomOf="@id/imgPhoto"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:id="@+id/btnTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Botón"
+        app:layout_constraintStart_toStartOf="@id/btnOne"
+        app:layout_constraintEnd_toEndOf="@id/btnOne"
+        app:layout_constraintTop_toBottomOf="@id/btnOne"
+        android:layout_marginTop="16dp"/>
+
+
+    <ImageView
+        android:id="@+id/imgDogeKing"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:src="@drawable/dogeking"
+        android:background="@android:color/holo_orange_light"
+        app:layout_constraintTop_toBottomOf="@id/btnTwo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="150dp"
+        android:layout_marginHorizontal="16dp"
+        />
+
+    <ImageButton
+        android:id="@+id/btnPlusOne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/ic_media_play"
+        app:layout_constraintEnd_toEndOf="@id/imgDogeKing"
+        app:layout_constraintBottom_toBottomOf="@id/imgDogeKing"
+        android:layout_marginEnd="4dp"/>
+
+
+    <ImageButton
+        android:id="@+id/btnPlusTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/ic_media_play"
+        app:layout_constraintEnd_toStartOf="@id/btnPlusOne"
+        app:layout_constraintTop_toTopOf="@id/btnPlusOne"
+        android:layout_marginEnd="4dp"
+        android:rotation="180"
+        />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/imgDogeKing"
+        android:background="@color/white">
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/startGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.25"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/endGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/topGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="16dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/bottomGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="32dp"/>
+
+        <TextView
+            android:id="@+id/tvStart"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/topGuideline"
+            app:layout_constraintStart_toStartOf="@id/startGuideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="start = 25%, top = 16dp"
+            android:background="@android:color/darker_gray"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="end = 50%, bottom = 32dp"
+            android:background="@android:color/black"
+            android:textColor="@color/white"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/tvStart"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/endGuideline"
+            app:layout_constraintBottom_toBottomOf="@id/bottomGuideline"/>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 
